@@ -1,0 +1,97 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+   <!--<link href="../resources/css/my_style.css" rel="stylesheet" />-->
+  <style>
+    body{
+      background-image: url('../../images/dogWallpaper.jpg'); 
+      background-repeat: no-repeat; 
+      background-attachment: fixed; 
+      background-size: 100% 110%;
+      background-position: center;
+    }
+    .jumbotron{
+      background-color: rgba(255, 255, 255, 0.6)
+    }
+  </style>
+  <body>
+    <script src="../../js/notifications.js"></script>
+    <script>
+        function showNotification() {
+        // create a new notification
+        const notification = new Notification('My Fitness Pet', {
+            body: 'It looks like your pet might be hungry, maybe its time for a snack!',
+            icon: '../images/dog-bowl.jpg'
+        });
+
+        // close the notification after 10 seconds
+        setTimeout(() => {
+            notification.close();
+        }, 10 * 1000);
+
+        // navigate to a URL when clicked
+        notification.addEventListener('click', () => {
+
+            window.location.replace('http://localhost:3001/petProfile', '_blank');
+        });
+      }
+    </script>
+    <div class="container">
+      <br><br><br><br>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col">
+          <div class=jumbotron>
+            <h1 class="display-4">
+              <b>My Fitness Pet</b>
+            </h1>
+            <p class="lead">
+              <b>In our app, you can sign in to your profile and link with your family to keep track of who has fed the pet when and keep track of your pet's health!</b>
+            </p>
+            <p class="lead">
+              <b>
+                To get started you can create a 
+                <button class="btn btn-secondary" style="height:30px;padding:2px;" onclick="window.location.href='http://localhost:3001/petRegistration'">pet registration here</button>
+                to fit your pet's needs.
+              </b>
+            </p>
+            <p class="lead">
+              <b>
+                To make it easier for the whole family to care for your pet you can create a 
+                <button class="btn btn-secondary" style="height:30px;padding:2px;" onclick="window.location.href='http://localhost:3001/register'">family registration here</button>
+                .  This way the whole family will know when your pet is hungry.
+              </b>
+            </p>
+            <p class="lead">
+              <b>
+                Using our handy 
+                <button class="btn btn-secondary" style="height:30px;padding:2px;" onclick="window.location.href='http://localhost:3001/calendar'">calendar</button>
+                you can see if your pet has any upcoming vet appointments!
+              </b>
+            </p>
+            <p class="lead">
+              <b>My Fitness Pet comes with a notification system to help keep your pet happy and healthy!</b>
+            </p>
+            <button class="btn btn-secondary" onclick="showNotification()">Test Notification</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/my_scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<link rel="stylesheet" type="text/css" href="../css/signin.css" />
+<body>
+
+<h2>Sign In Page</h2>
+
+<form method="POST" action="/signup/logintoaccount">
+  <div class="imgcontainer">
+    <img src="../images/login-pup.jfif" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Email</b></label>
+    <input type="text" placeholder="Enter email" name="Email" id="Email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" d="psw" required>
+        
+    <button id="loginButton" type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn" onclick="window.location.href='home';">Cancel </button>
+    <span class="psw">Don't have an account, wanna <a href="./register">sign up?</a></span>
+  </div>
+</form>
+
+</body>
+</html>

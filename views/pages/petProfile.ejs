@@ -1,0 +1,84 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+    <title>Pet Profile Page</title>
+    <link rel="icon" href="../resources/img/favicon.ico" type="image/x-icon" />
+    <!-- Bootstrap core CSS -->
+  <body onload="loadDogPage()">
+    <div class="container">
+      <br />
+      <button><a class="nav-link" href="/PetRegistration">Register a Pet</a></button>
+      <div class="row">
+        <div class="col-4">
+          <div class="card">
+  <!-- Possibly add Profile Pic -->
+				<div class="card-body mx-auto">
+					<form class="form" action="/petProfile/pet" method="get">
+						<select class="custom-select" name="pet_choice" onchange="this.form.submit()">
+							<option selected>Select Pets</option>
+							<%
+							if (pets) {
+								var options = '';
+								pets.forEach(function(item){
+									options += "<option value=" + item.petid + ">" + item.pet_name + "</option>"
+								}); %>
+							<%- options %>
+							<% } %>
+						</select>
+					</form>
+				</div>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th>Name</th>
+                <td><% if(pet){var name = pet.pet_name;} %><%- name %></td>
+              </tr>
+              <tr>
+                <th>Age</th>
+                <td><% if(pet){var age = pet.age;} %><%- age %></td>
+              </tr>
+              <tr>
+                <th>ID</th>
+                <td><% if(pet){var ID = pet.petid;} %><%- ID %></td>
+              </tr>
+              <tr>
+                <th>FamilyID</th>
+                <td><% if(pet){var famID = pet.familyid;} %><%- famID %></td>
+              </tr>
+              <tr>
+                <th>Pet Type</th>
+                <td><% if(pet){var type = pet.pet_type;} %><%- type %></td>
+              </tr>
+              <tr>
+                <th>Current Weight</th>
+                <td><% if(pet){var weight = pet.currentweight;} %><%- weight %></td>
+              </tr>
+              <tr>
+                <th>Number of times to feed</th>
+                <td><% if(pet){var feedTimes = pet.timestofeed;} %><%- feedTimes %></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../resources/js/my_scripts.js"></script>
+  </body>
+</html>

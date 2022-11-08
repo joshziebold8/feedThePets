@@ -1,0 +1,71 @@
+						Manual Testing
+
+------------------------------------------User Authetification (Login)----------------------------------
+Login with non-exsistant user:
+
+email: 123213213@colorado.edu
+password: sdkjf
+
+
+Login with Existant user:
+
+email: 1234@colorado.edu
+password: Password1
+
+-----------------------------------User Authetification (User Registration)----------------------------
+register new valid user:
+
+name: Smith
+email: ayden.smith@colorado.edu
+familyID: 101
+Number of Pets: 1
+Password: MaxPup123
+Confirm Password: MaxPup123
+
+
+register new invalid user (familyID already exists):
+
+name: Smith
+email: ayden.smith@colorado.edu
+familyID: 123
+Number of Pets: 1
+Password: MaxPup123
+Confirm Password: MaxPup123
+
+
+register new invalid Info (passwords doesn't match):
+
+name: Smith
+email: ayden.smith@colorado.edu
+familyID: 123
+Number of Pets: 1
+Password: MaxPup1234
+Confirm Password: MaxPup123
+
+
+register new invalid Info (passwords are invalid):
+
+name: Smith
+email: ayden.smith@colorado.edu
+familyID: 123
+Number of Pets: 1
+Password: MaxPup
+Confirm Password: MaxPup
+
+------------------------------------------User Authetification (Pet Registration)---------------------------------
+Pet Registration valid user:
+PetID: 101
+Pet Name: Mat
+Pet Type: Rat
+Pet Weight:3
+Age:1
+How many times to feed per day:2
+
+
+Pet Registration invalid user(PetID already exists):
+PetID: 1231
+Pet Name: Mat
+Pet Type: Rat
+Pet Weight:3
+Age:1
+How many times to feed per day:2
